@@ -1,0 +1,289 @@
+<!doctype html >
+<html lang="ru">
+  <head href="http://127.0.0.1:8080/all">
+    <meta charset="UTF-8" />
+    <title>Конструктор резюме</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+  </head>
+  <body onload="createResumeBlock(names)">
+    <h1 test-id="resume-form-title">Мои резюме</h1>
+    <div>
+      <buton type="submit" onclick="redirectToMain()" style="cursor: pointer; font-size: 30px;">+</buton>
+    </div>
+    <div class="block_of_resume">
+      <p test-id="resume-title-field">name of res</p>
+      <button tittle="Действия" onclick="myFunction()" class="dropbtn">...</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Открыть</a>
+        <a href="#">Удалить</a>
+        <a href="#" class="copy">Копировать</a>
+      </div>
+      <input type="checkbox" class="my-checkbox">
+    </div>
+    <div class="button-container"></div>
+    <div class="modal-window hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Выберите данные для копирования</h2>
+        </div>
+        <div class="modal-body">
+          <ul class="checkbox-list">
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="ФИО">
+              <label for="fio">ФИО</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Дата рождения">
+              <label for="birthdate">Дата рождения</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Город">
+              <label for="city">Город</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Адрес">
+              <label for="address">Адрес</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Телефон">
+              <label for="phone">Телефон</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Почта">
+              <label for="email">Почта</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="О себе">
+              <label for="about">О себе</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Интересы">
+              <label for="interests">Интересы</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Языки">
+              <label for="languages">Языки</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Опыт работы">
+              <label for="experience">Опыт работы</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Образование">
+              <label for="education">Образование</label>
+            </li>
+            <li>
+              <input type="checkbox" class="checkbox-item" data-value="Курсы">
+              <label for="courses">Курсы</label>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="copy-button">Копировать</button>
+          <button class="cancel-button">Отмена</button>
+        </div>
+      </div>
+    </div>    
+    </div>
+  </body>
+  <script>
+    const aTag = document.querySelector(".copy"); // Ваш тег a
+    const modalWindow = document.querySelector(".modal-window"); // Модальное окно
+    const checkboxList = document.querySelectorAll(".checkbox-item"); // Список чекбоксов
+    const copyButton = document.querySelector(".copy-button");
+
+    function showModalWindow() {
+      modalWindow.classList.remove("hidden");
+    }
+
+    function hideModalWindow() {
+      modalWindow.classList.add("hidden");
+    }
+
+    aTag.addEventListener("click", function (event) {
+      event.preventDefault();
+      showModalWindow();
+    });
+
+    document.querySelector(".cancel-button").addEventListener("click", hideModalWindow);
+
+    copyButton.addEventListener("click", function () {
+    });
+
+    function getSelectedData() {
+      const selectedData = [];
+      for (const checkbox of checkboxList) {
+        if (checkbox.checked) {
+          selectedData.push(checkbox.dataset.value);
+        }
+      }
+      return selectedData.join(", ");
+    }
+
+    copyButton.addEventListener("click", function () {
+      const selectedData = getSelectedData();
+      alert(selectedData)
+      navigator.clipboard.writeText(selectedData).then(function () {
+      }, function () {
+      });
+    });
+
+    hideModalWindow();
+  </script>
+  <script>
+    const checkboxes = document.querySelectorAll(".my-checkbox"); 
+    const buttonContainer = document.querySelector(".button-container"); 
+
+    function showButton() {
+      const button = document.createElement("button");
+      button.textContent = "Создать массив";
+
+
+      button.addEventListener("click", function () {
+      });
+
+      buttonContainer.appendChild(button);
+    }
+
+    function hideButton() {
+      const button = buttonContainer.querySelector("button");
+      if (button) {
+        buttonContainer.removeChild(button);
+      }
+    }
+
+    for (const checkbox of checkboxes) {
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          showButton();
+        } else {
+          let allUnchecked = true;
+          for (const checkbox of checkboxes) {
+            if (checkbox.checked) {
+              allUnchecked = false;
+              break;
+            }
+          }
+          if (allUnchecked) {
+            hideButton();
+          }
+        }
+      });
+    }
+
+    if (!checkboxes.some((checkbox) => checkbox.checked)) {
+      hideButton();
+    }
+  </script>
+
+  <script>
+  function redirectToMain() {
+      window.location.href = "/";
+  }
+  </script>
+  <script>
+  const localStorageKey = "username"; // ключ для хранения данных в local.storage
+  const names = localStorage.getItem('username');
+  alert(names);
+  // Функция для создания блока
+  function createResumeBlock(name) {
+  // Создаем контейнер блока
+  const block = document.createElement("div");
+  block.classList.add("block_of_resume");
+
+  // Create the paragraph element for the resume name
+  const nameParagraph = document.createElement("p");
+  nameParagraph.textContent = name;
+  block.appendChild(nameParagraph);
+
+  // Create the button element
+  const button = document.createElement("button");
+  button.title = "Действия";
+  button.classList.add("dropbtn");
+  button.textContent = "...";
+  // You might want to add an event listener to the button here for functionality
+
+  // Create the dropdown div element
+  const dropdown = document.createElement("div");
+  dropdown.id = "myDropdown";
+  dropdown.classList.add("dropdown-content");
+
+  // Create links for the dropdown menu
+  const openLink = document.createElement("a");
+  openLink.href = "#";
+  openLink.textContent = "Открыть";
+  dropdown.appendChild(openLink);
+
+  const deleteLink = document.createElement("a");
+  deleteLink.href = "#";
+  deleteLink.textContent = "Удалить";
+  dropdown.appendChild(deleteLink);
+
+  const copyLink = document.createElement("a");
+  copyLink.href = "#";
+  copyLink.classList.add("copy");
+  copyLink.textContent = "Копировать";
+  dropdown.appendChild(copyLink);
+
+  // Append the dropdown to the button
+  button.appendChild(dropdown);
+
+  // Create the checkbox element
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.classList.add("my-checkbox");
+
+  // Append all elements to the main div
+  block.appendChild(button);
+  block.appendChild(checkBox);
+  document.body.appendChild(block);
+}
+
+  // Получаем данные из local.storage
+
+
+  // Очищаем контейнер
+  // const blocksContainer = document.getElementById("blocks-container");
+  // blocksContainer.innerHTML = "";
+
+  // Создаем блоки
+  // for (const name of names) {
+  // }
+
+  // // Функция для сохранения данных в local.storage
+  // function saveBlocks() {
+  //   const names = [];
+
+  //   // Получаем все элементы с классом "block"
+  //   const blocks = document.querySelectorAll(".block");
+  //   for (const block of blocks) {
+  //     // Получаем текст из элемента
+  //     const name = block.querySelector("h2").textContent;
+  //     names.push(name);
+  //   }
+
+  //   localStorage.setItem(localStorageKey, JSON.stringify(names));
+  // }
+
+// // Добавляем обработчик события на кнопку "Сохранить"
+// const saveButton = document.getElementById("save-button");
+// saveButton.addEventListener("click", saveBlocks);
+</script>
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</html>

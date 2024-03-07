@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div id ="resume-main-content" class = "hidden">
+            <div id = "resume-main-article" class = "left">
+            </div>
+            <div id="resume-main-article" class = "right">
+                <h1 id="resume-main-section" class = "main-title"></h1>
+            </div>
+                <!--<div id="resume-main-section" class = "work">
+                    <h2 class = "work-title">Опыт работы</h2>
+                    <div class = "right-divide-line"></div>
+                    <div class = "work-container">
+                        <div class = "work-number">
+                            <div class = "work-value-date">
+                                <h3 class = "work-value">window.localStorage.getItem('post' + cnt_work)</h3>
+                                <span class = "work-date">window.localStorage.getItem('date' + cnt_work)</span>
+                            </div>
+                            <p class = "work-place">window.localStorage.getItem('place' + cnt_work)</p>
+                            <p class = "work-discription">window.localStorage.getItem('discription' + cnt_work)</p>
+                        </div>
+                    </div>
+                </div>-->
+                <script>
+                    function redirectToAll() {
+                        const myData = document.querySelector("input[name='username']").value;
+                        alert(myData);
+                        localStorage.setItem('username', myData);
+                        // Get the current URL path
+                        var currentPath = window.location.origin
+
+                        // Append "/contest" to the current path
+                        var newUrl = '///Users/aleksandrcuvpilo/Desktop/prod-site/all.html';
+
+                        // Navigate to the new URL
+                        window.location.href = newUrl;
+                    }
+                    document.querySelector('.all-button').addEventListener('click', redirectToAll);
+                </script>
+            </div>
+        </div>
+        <div id="resume-builder">
+            <form id="resumeForm">
+                <label for="username">ФИО:</label>
+                <input type="text" name="username" required id="personal-info" class = "myField"><br><br>
+                <label for="username">Дата рождения:</label>
+                <input type="date" name="bdate" id="personal-info" class = "myField"><br><br>
+                <label for="username">Город:</label>
+                <input type="text" name="individual-city" id="personal-info" class = "myField"><br><br>
+                <label for="username">Номер телефона:</label>
+                <input type="text" name="phone-number" id="personal-info" class = "myField"><br><br>
+                <label for="username">Email:</label>
+                <input type="email" name="individual-email" id="personal-info" class = "myField"><br><br>
+
+                <div id="interestContainer">
+                    <div class="interest-input">
+                        <label for="interest0">Интерес:</label>
+                        <input type="text" name="interest0" class = "myField">
+                    </div>
+                </div>
+                <button id="add-interest" type="button" onclick="addInterest()">Добавить интерес</button>
+                <button id="remove-interest" type="button" onclick="removeInterest()">Удалить последний интерес</button>
+                
+                <div id="languageContainer">
+                    <div class="language-input">
+                        <label for="language">Язык:</label>
+                        <input type="text" name="language0" id="language-name" class = "myField"><br>
+                        <label for="level">Уровень владения:</label>
+                        <input type="text" name="level0" id="language-level" class = "myField">
+                    </div>
+                </div>
+                <button id="add-language" type="button" onclick="addlanguage()">Добавить новый язык</button>
+                <button id="remove-language" type="button" onclick="removelanguage()">Удалить информацию про последний язык</button>
+
+                <div id="disriptionContainer">
+                    <div class="discription-input">
+                        <label for="discription">О себе:</label>
+                        <input type="text" name="discription" id="personal-description" class = "myField"><br>
+                    </div>
+                </div>
+
+                <div id="workContainer">
+                    <div class="work-input">
+                        <label for="post0">Должность:</label>
+                        <input type="text" name="post0" id="job-title" class = "myField"><br>
+                        <label for="job-date-start">Дата начала работы:</label>
+                        <input type="text" name="job-date-start0" id="job-date-start" class = "myField"><br>
+                        <label for="job-date-end">Дата конца работы:</label>
+                        <input type="text" name="job-date-end0" id="job-date-end" class = "myField"><br>
+                        <label for="job-place">Место работы:</label>
+                        <input type="text" name="job-place0" id="job-place" class = "myField"><br>
+                        <label for="discription">Описание:</label>
+                        <input type="text" name="discription0" id="job-description" class = "myField"><br>
+                    </div>
+                </div>
+                <button id="add-job" type="button" onclick="addwork()">Добавить новую работу</button>
+                <button id="remove-job" type="button" onclick="removework()">Удалить информацию про последнюю работу</button>
+                
+                <div id="educationContainer">
+                    <div class="education-input">
+                        <label for="education-title">Обучение:</label>
+                        <input type="text" name="education-title0" id="education-title" class = "myField"><br>
+                        <label for="education-date-start">Дата начала обучения:</label>
+                        <input type="text" name="education-date-start0" id="education-date-start" class = "myField"><br>
+                        <label for="education-date-end">Дата конца обучения:</label>
+                        <input type="text" name="education-date-end0" id="education-date-end" class = "myField"><br>
+                        <label for="education-place">Место обучения:</label>
+                        <input type="text" name="education-place0" id="education-place" class = "myField"><br>
+                        <label for="education-description">Описание:</label>
+                        <input type="text" name="education-description0" id="education-description" class = "myField"><br>
+                    </div>
+                </div>
+                <button id="add-education" type="button" onclick="addeducation()">Добавить новое обучение</button>
+                <button id="remove-education" type="button" onclick="removeeducation()">Удалить информацию про последнее обучение</button>
+
+                <div id="courseContainer">
+                    <div class="course-input">
+                        <label for="course-title">Курс:</label>
+                        <input type="text" name="course-title0" id="course-title" class = "myField"><br>
+                        <label for="course-date-start">Дата начала курса:</label>
+                        <input type="text" name="course-date-start0" id="course-date-start" class = "myField"><br>
+                        <label for="course-date-end">Дата конца курса:</label>
+                        <input type="text" name="course-date-end0" id="course-date-end" class = "myField"><br>
+                        <label for="course-place">Место проведения курса:</label>
+                        <input type="text" name="course-place0" id="course-place" class = "myField"><br>
+                        <label for="course-description">Описание:</label>
+                        <input type="text" name="course-discription0" id="course-discription" class = "myField"><br>
+                    </div>
+                </div>
+                <button id="add-course" type="button" onclick="addcourse()">Добавить новый курс</button>
+                <button id="remove-course" type="button" onclick="removecourse()">Удалить информацию про последний курс</button><br>
+
+                <button type="submit">Отправить</button>
+            </form>
+            <script>
+                var cnt_interest = 1;
+                var cnt_language = 1;
+                var cnt_work = 1;
+                var cnt_education = 1;
+                var cnt_course = 1;
+                function addInterest() {
+                    var container = document.getElementById("interestContainer");
+                    var newInput = document.createElement("div");
+                    newInput.className = "interest-input";
+                    newInput.innerHTML = '<label for="interest' + cnt_interest + '">Интерес:</label><input type="text" name="interest' + cnt_interest + '" id="interest" class = "myField">';
+                    cnt_interest++;
+                    container.appendChild(newInput);
+                }
+                function removeInterest() {
+                    var container = document.getElementById("interestContainer");
+                    var inputs = container.getElementsByClassName("interest-input");
+                    if (inputs.length > 1) {
+                        container.removeChild(inputs[inputs.length - 1]);
+                    }
+                }
+                function addlanguage() {
+                    var container = document.getElementById("languageContainer");
+                    var newInput = document.createElement("div");
+                    newInput.className = "language-input";
+                    newInput.innerHTML = '<label for="language' + cnt_language + '">Язык:</label><input type="text" name="language' + cnt_language + '" id="language" class = "myField"><br><label for="level' + cnt_language + '">Уровень владения:</label><input type="text" name="level' + cnt_language + '" id="level" class = "myField">';
+                    cnt_language++;
+                    container.appendChild(newInput);
+                }
+                function removelanguage() {
+                    var container = document.getElementById("languageContainer");
+                    var inputs = container.getElementsByClassName("language-input");
+                    if (inputs.length > 1) {
+                        container.removeChild(inputs[inputs.length - 1]);
+                    }
+                }
+                function addwork() {
+                    var container = document.getElementById("workContainer");
+                    var newInput = document.createElement("div");
+                    newInput.className = "work-input";
+                    newInput.innerHTML = '<label for="post' + cnt_work + '">Должность:</label><input type="text" name="post' + cnt_work + '" id="job-title" class = "myField"><br><label for="job-date-start' + cnt_work + '">Дата начала работы:</label><input type="data" name="job-date-start' + cnt_work + '" id="job-date-start" class = "myField"><br><label for="job-date-end' + cnt_work + '">Дата конца работы:</label><input type="data" name="job-date-end' + cnt_work + '" id="job-date-end" class = "myField"><br><label for="job-place'  + cnt_work + '">Место работы:</label><input type="text" name="job-place' + cnt_work + '" id="job-place" class = "myField"><br><label for="discription' + cnt_work + '">Описание:</label><input type="text" name="discription' + cnt_work + '" id="job-description" class = "myField"><br>';
+                    container.appendChild(newInput);
+                }
+                function removework() {
+                    var container = document.getElementById("workContainer");
+                    var inputs = container.getElementsByClassName("work-input");
+                    if (inputs.length > 1) {
+                        container.removeChild(inputs[inputs.length - 1]);
+                    }
+                }
+                function addeducation() {
+                    var container = document.getElementById("educationContainer");
+                    var newInput = document.createElement("div");
+                    newInput.className = "education-input";
+                    newInput.innerHTML = '<label for="education-title' + cnt_education + '">Обучение:</label><input type="text" name="education-title' + cnt_education + '" id="education-title" class = "myField"><br><label for="education-date-start' + cnt_education + '">Дата начала обучения:</label><input type="data" name="education-date-start' + cnt_education + '" id="education-date-start" class = "myField"><br><label for="education-date-end' + cnt_education + '">Дата конца обучения:</label><input type="data" name="education-date-end' + cnt_education + '" id="education-date-end" class = "myField"><br><label for="education-place' + cnt_education + '">Место обучения:</label><input type="text" name="education-place' + cnt_education + '" id="education-place" class = "myField"><br><label for="education-description' + cnt_education + '">Описание:</label><input type="text" name="education-description' + cnt_education + '" id="education-description" class = "myField"><br>';
+                    container.appendChild(newInput);
+                }
+                function removeeducation() {
+                    var container = document.getElementById("educationContainer");
+                    var inputs = container.getElementsByClassName("education-input");
+                    if (inputs.length > 1) {
+                        container.removeChild(inputs[inputs.length - 1]);
+                    }
+                }
+                function addcourse() {
+                    var container = document.getElementById("courseContainer");
+                    var newInput = document.createElement("div");
+                    newInput.className = "course-input";
+                    newInput.innerHTML = '<label for="course-title' + cnt_course + '">Курс:</label><input type="text" name="course-title' + cnt_course + '" id="course-title" class = "myField"><br><label for="course-date-start' + cnt_course + '">Дата начала курса:</label><input type="data" name="course-date-start' + cnt_course + '" id="course-date-start" class = "myField"><br><label for="course-date-end' + cnt_course + '">Дата конца курса:</label><input type="data" name="course-date-end' + cnt_course + '" id="course-date-end" class = "myField"><br><label for="course-place">Место проведения курса:</label><input type="text" name="course-place' + cnt_course + '" id="course-place" class = "myField"><br><label for="course-description' + cnt_course + '">Описание:</label><input type="text" name="course-description' + cnt_course + '" id="course-description" class = "myField"><br>';
+                    container.appendChild(newInput);
+                }
+                function removecourse() {
+                    var container = document.getElementById("courseContainer");
+                    var inputs = container.getElementsByClassName("course-input");
+                    if (inputs.length > 1) {
+                        container.removeChild(inputs[inputs.length - 1]);
+                    }
+                }
+            </script>
+            <script>
+                localStorage.clear();
+                var data_array = []
+                function serializeForm(formNode) {
+                    const { elements } = formNode
+                    const data = Array.from(elements)
+                    .filter((item) => !!item.name)
+                    .map((element) => {
+                    const { name, value } = element
+                    return { name, value }
+                    })
+                    return data
+                }
+                function handleFormSubmit(event) {
+                    event.preventDefault()
+                    data_array = serializeForm(applicantForm)
+                    for (let i = 0; i < data_array.length; i++) {
+                        window.localStorage.setItem(data_array[i].name, data_array[i].value);
+                    }
+                    document.querySelector('.left').innerHTML = '<div id = "resume-main-section" class = "avatar-image"></div><div id = "resume-main-section" class = "individual-data"><h2 class = "individual-data-title">Личные данные</h2><div class = "left-divide-line"></div><div class = "individual-discription"><div class = "fio"><h3 class = "fio-title">ФИО:</h3><p class = "fio-value"></p></div></div></div>';
+                    document.querySelector('.right').innerHTML = '<h1 id="resume-main-section" class = "main-title"></h1>';
+                    document.querySelector('#resume-main-content').classList.remove('hidden')
+                    document.querySelector('#resume-builder').classList.add('hidden')
+                    document.querySelector('#resume-main-content').classList.add('help')
+                    document.querySelector('.fio-value').innerHTML = window.localStorage.getItem('username');
+                    document.querySelector('.main-title').innerHTML = window.localStorage.getItem('username');
+                    if (window.localStorage.getItem('bdate') != '') {
+                                    let temp = document.querySelector('.individual-discription');
+                                    temp.innerHTML += '<div class = "bdate"><h3 class = "bdate-title">Дата рождения:</h3><p class = "bdate-value"></p></div>';
+                                    let temp1 = document.querySelector('.bdate-value');
+                                    temp1.innerHTML = window.localStorage.getItem('bdate');
+                                }
+                                if (window.localStorage.getItem('individual-city') != '') {
+                                    let temp = document.querySelector('.individual-discription');
+                                    temp.innerHTML += '<div class = "city"><h3 class = "city-title">Город:</h3><p class = "city-value"></p></div>';
+                                    let temp1 = document.querySelector('.city-value');
+                                    temp1.innerHTML = window.localStorage.getItem('individual-city');
+                                }
+                                if (window.localStorage.getItem('phone-number') != '') {
+                                    let temp = document.querySelector('.individual-discription');
+                                    temp.innerHTML += '<div class = "phone"><h3 class = "phone-title">Город:</h3><p class = "phone-value"></p></div>';
+                                    let temp1 = document.querySelector('.phone-value');
+                                    temp1.innerHTML = window.localStorage.getItem('phone-number');
+                                }
+                                if (window.localStorage.getItem('individual-email') != '') {
+                                    let temp = document.querySelector('.individual-discription');
+                                    temp.innerHTML += '<div class = "email"><h3 class = "email-title">Город:</h3><p class = "email-value"></p></div>';
+                                    let temp1 = document.querySelector('.email-value');
+                                    temp1.innerHTML = window.localStorage.getItem('individual-email');
+                                }
+                    function isItemInLocalStorage(key) {
+                        var item = localStorage.getItem(key);
+                        return item !== null;
+                    }
+                    var cnt1_interest = 0;
+                    while (true) {
+                        if (!isItemInLocalStorage('interest' + cnt1_interest) || window.localStorage.getItem('interest' + cnt1_interest) == '') {
+                            break;
+                        }
+                        alert("here")
+                        if (cnt1_interest == 0) {
+                            document.querySelector('.left').innerHTML += '<div id = "resume-main-section" class = "interests"><h2 class = "interests-title">Интересы</h2><div class = "left-divide-line"></div><div class = "interests-discription"></div></div>';
+                        }
+                        var string = window.localStorage.getItem('interest' + cnt1_interest);
+                        document.querySelector('.interests-discription').innerHTML += '<p class = "interest-value">' + string + '</p>';
+                        cnt1_interest++;
+                    }
+                    var cnt1_language = 0;
+                    while (true) {
+                        if (!isItemInLocalStorage('language' + cnt1_language) && !isItemInLocalStorage('level' + cnt1_language)) {
+                            break;
+                        }
+                        var language_value = window.localStorage.getItem('language' + cnt1_language);
+                        var level_value = window.localStorage.getItem('level' + cnt1_language);
+                        if (language_value == '') {
+                            cnt1_language++;
+                            continue;
+                        }
+                        if (cnt1_language == 0) {
+                            document.querySelector('.left').innerHTML += '<div id = "resume-main-section" class = "languages"><h2 class = "languages-title">Языки</h2><div class = "left-divide-line"></div><div class = "languages-discription"></div></div>';
+                        }
+                        var container = document.querySelector('.languages-discription');
+                        container.innerHTML += '<div class = "language-container"><span class = "language-value">' + language_value +'</span>' + '<span class = "level-value">' + level_value + '</span></div>';
+                        cnt1_language++;
+                    }
+                    if (window.localStorage.getItem('discription') != '') {
+                        var temp = document.querySelector('.right');
+                        temp.innerHTML += '<div class = "main-discription-container"><div class = "right-divide-line"></div><div class = "main-discription"><p class = "main-discription-value">' + window.localStorage.getItem('discription') + '</p></div></div>';
+                    }
+                    function isItemInLocalStorage(key) {
+                        var item = localStorage.getItem(key);
+                        return item !== null;
+                    }
+                    var temp = document.querySelector('.right');
+                    var cnt_work = 0;
+                    var cnt_exist = 0;
+                    while (true) {
+                        if (!isItemInLocalStorage('post' + cnt_work) && !isItemInLocalStorage('discription' + cnt_work) && !isItemInLocalStorage('job-date-start' + cnt_work) && !isItemInLocalStorage('job-date-end' + cnt_work) && !isItemInLocalStorage('job-place' + cnt_work)) {
+                            break;
+                        }
+                        if (window.localStorage.getItem('post' + cnt_work) == '') {
+                            cnt_work++;
+                            continue;
+                        }
+                        if (cnt_exist == 0) {
+                            temp.innerHTML += '<div id="resume-main-section" class = "work"><h2 class = "work-title">Опыт работы</h2><div class = "right-divide-line-work"></div><div class = "work-container"></div></div>';
+                            cnt_exist++;
+                        }
+                        var work = document.querySelector('.work-container');
+                        work.innerHTML += '<div class = "work-number"><div class = "work-value-date"><h3 class = "work-value">' + window.localStorage.getItem('post' + cnt_work) + '</h3><span class = "work-date">' + window.localStorage.getItem('job-date-start' + cnt_work) + ' - ' + window.localStorage.getItem('job-date-end' + cnt_work) + '</span></div><p class = "work-place">' + window.localStorage.getItem('job-place' + cnt_work) + '</p><p class = "work-discription">' + window.localStorage.getItem('discription' + cnt_work) + '</p></div>';
+                        cnt_work++;
+                    }
+                    var temp = document.querySelector('.right');
+                    var cnt_education = 0;
+                    var cnt_exist = 0;
+                    while (true) {
+                        if (!isItemInLocalStorage('education-title' + cnt_education) && !isItemInLocalStorage('education-discription' + cnt_education) && !isItemInLocalStorage('education-date-start' + cnt_education) && !isItemInLocalStorage('education-date-end' + cnt_education) && !isItemInLocalStorage('education-place' + cnt_education)) {
+                            break;
+                        }
+                        if (window.localStorage.getItem('education-title' + cnt_education) == '') {
+                            cnt_education++;
+                            continue;
+                        }
+                        if (cnt_exist == 0) {
+                            cnt_exist++;
+                            temp.innerHTML += '<div id="resume-main-section" class = "education"><h2 class = "education-title">Образование и квалификация</h2><div class = "right-divide-line-education"></div><div class = "education-container"></div></div>';
+                        }
+                        var work = document.querySelector('.education-container');
+                        if (window.localStorage.getItem('education-discription' + cnt_course) == null) {
+                            if (window.localStorage.getItem('education-start-date' + cnt_education) == null) {
+                                work.innerHTML += '<div class = "education-number"><div class = "education-value-date"><h3 class = "education-value">' + window.localStorage.getItem('education-title' + cnt_education) + '</h3></div><p class = "education-place">' + window.localStorage.getItem('education-place' + cnt_education) + '</p></div>';
+                            } else {
+                                work.innerHTML += '<div class = "education-number"><div class = "education-value-date"><h3 class = "education-value">' + window.localStorage.getItem('education-title' + cnt_education) + '</h3><span class = "education-date">' + window.localStorage.getItem('education-date-start' + cnt_education) + ' - ' + window.localStorage.getItem('education-date-end' + cnt_education) + '</span></div><p class = "education-place">' + window.localStorage.getItem('education-place' + cnt_education) + '</p></div>';
+                            }
+                        } else {
+                            if (window.localStorage.getItem('education-start-date' + cnt_education) == null) {
+                                work.innerHTML += '<div class = "education-number"><div class = "education-value-date"><h3 class = "education-value">' + window.localStorage.getItem('education-title' + cnt_education) + '</h3></div><p class = "education-place">' + window.localStorage.getItem('education-place' + cnt_education) + '</p><p class = "education-discription">' + window.localStorage.getItem('education-discription' + cnt_education) + '</p></div>';
+                            } else {
+                                if ((window.localStorage.getItem('course-start-date' + cnt_course) != '' || window.localStorage.getItem('course-start-date' + cnt_course) != null) && window.localStorage.getItem('course-end-date' + cnt_course) == '') {
+                                    work.innerHTML += '<div class = "education-number"><div class = "education-value-date"><h3 class = "education-value">' + window.localStorage.getItem('education-title' + cnt_education) + '</h3><span class = "education-date">' + window.localStorage.getItem('education-date-start' + cnt_education) + ' - наст.время</span></div><p class = "education-place">' + window.localStorage.getItem('education-place' + cnt_education) + '</p><p class = "education-discription">' + window.localStorage.getItem('education-discription' + cnt_education) + '</p></div>';
+                                } else {
+                                    work.innerHTML += '<div class = "education-number"><div class = "education-value-date"><h3 class = "education-value">' + window.localStorage.getItem('education-title' + cnt_education) + '</h3><span class = "education-date">' + window.localStorage.getItem('education-date-start' + cnt_education) + ' - ' + window.localStorage.getItem('education-date-end' + cnt_education) + '</span></div><p class = "education-place">' + window.localStorage.getItem('education-place' + cnt_education) + '</p><p class = "education-discription">' + window.localStorage.getItem('education-discription' + cnt_education) + '</p></div>';
+                                }
+                            }
+                        }
+                        cnt_education++;
+                    }
+                    var temp = document.querySelector('.right');
+                    var cnt_course = 0;
+                    var cnt_exist = 0;
+                    while (true) {
+                        if (!isItemInLocalStorage('course-title' + cnt_course) && !isItemInLocalStorage('course-discription' + cnt_course) && !isItemInLocalStorage('course-date-start' + cnt_course) && !isItemInLocalStorage('course-date-end' + cnt_course) && !isItemInLocalStorage('course-place' + cnt_course)) {
+                            break;
+                        }
+                        if (window.localStorage.getItem('course-title' + cnt_course) == '') {
+                            cnt_course++;
+                            continue;
+                        }
+                        if (cnt_exist == 0) {
+                            cnt_exist++;
+                            temp.innerHTML += '<div id="resume-main-section" class = "course"><h2 class = "course-title">Курсы</h2><div class = "right-divide-line-course"></div><div class = "course-container"></div></div>'
+                        }
+                        var work = document.querySelector('.course-container');
+                        if (window.localStorage.getItem('course-discription' + cnt_course) == null) {
+                            if (window.localStorage.getItem('course-start-date' + cnt_course) == null) {
+                                work.innerHTML += '<div class = "course-number"><div class = "course-value-date"><h3 class = "course-value">' + window.localStorage.getItem('course-title' + cnt_course) + '</h3></div><p class = "course-place">' + window.localStorage.getItem('course-place' + cnt_course) + '</p></div>';
+                            } else {
+                                work.innerHTML += '<div class = "course-number"><div class = "course-value-date"><h3 class = "course-value">' + window.localStorage.getItem('course-title' + cnt_course) + '</h3><span class = "course-date">' + window.localStorage.getItem('course-date-start' + cnt_course) + ' - ' + window.localStorage.getItem('course-date-end' + cnt_course) + '</span></div><p class = "course-place">' + window.localStorage.getItem('course-place' + cnt_course) + '</p></div>';
+                            }
+                        } else {
+                            if (window.localStorage.getItem('course-start-date' + cnt_course) == null) {
+                                work.innerHTML += '<div class = "course-number"><div class = "course-value-date"><h3 class = "course-value">' + window.localStorage.getItem('course-title' + cnt_course) + '</h3></div><p class = "course-place">' + window.localStorage.getItem('course-place' + cnt_course) + '</p><p class = "course-discription">' + window.localStorage.getItem('course-discription' + cnt_course) + '</p></div>';
+                            } else {
+                                if ((window.localStorage.getItem('course-start-date' + cnt_course) != '' || window.localStorage.getItem('course-start-date' + cnt_course) != null) && window.localStorage.getItem('course-end-date' + cnt_course) == '') {
+                                    work.innerHTML += '<div class = "course-number"><div class = "course-value-date"><h3 class = "course-value">' + window.localStorage.getItem('course-title' + cnt_course) + '</h3><span class = "course-date">' + window.localStorage.getItem('course-date-start' + cnt_course) + ' - наст.время</span></div><p class = "course-place">' + window.localStorage.getItem('course-place' + cnt_course) + '</p><p class = "course-discription">' + window.localStorage.getItem('course-discription' + cnt_course) + '</p></div>';
+                                } else {
+                                    work.innerHTML += '<div class = "course-number"><div class = "course-value-date"><h3 class = "course-value">' + window.localStorage.getItem('course-title' + cnt_course) + '</h3><span class = "course-date">' + window.localStorage.getItem('course-date-start' + cnt_course) + ' - ' + window.localStorage.getItem('course-date-end' + cnt_course) + '</span></div><p class = "course-place">' + window.localStorage.getItem('course-place' + cnt_course) + '</p><p class = "course-discription">' + window.localStorage.getItem('course-discription' + cnt_course) + '</p></div>';
+                                }
+                            }
+                        }
+                        cnt_course++;
+                    }
+                    document.querySelector('.right').innerHTML += '<button type="button" class="resume-redirect-button">Редактировать</button><button type="button" class="all-button">Все резюме</button>';
+                    function loadFromLocalStorage() {
+                        var fields = document.getElementsByName("myField");
+
+                        for (var i = 0; i < fields.length; i++) {
+                            var fieldName = fields[i].name;
+                            var storedValue = localStorage.getItem(fieldName);
+
+                            if (storedValue !== null) {
+                            fields[i].value = storedValue;
+                            }
+                        }
+                    }
+                        document.querySelector('.resume-redirect-button').addEventListener('click', function () {
+                        document.querySelector('#resume-builder').classList.remove('hidden');
+                        document.querySelector('#resume-main-content').classList.add('hidden');
+                        loadFromLocalStorage();
+                    });
+                }
+                const applicantForm = document.getElementById('resumeForm')
+                applicantForm.addEventListener('submit', handleFormSubmit)
+            </script>
+            <!--<script>
+                function loadFromLocalStorage() {
+                    var fields = document.getElementsByName("myField");
+
+                    for (var i = 0; i < fields.length; i++) {
+                        var fieldName = fields[i].name;
+                        var storedValue = localStorage.getItem(fieldName);
+
+                        if (storedValue !== null) {
+                        fields[i].value = storedValue;
+                        }
+                    }
+                }
+
+                function submitForm() {
+                    event.preventDefault();
+                }
+            </script>-->
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

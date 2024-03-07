@@ -1,0 +1,919 @@
+#resume-main-content {
+
+    padding: 0px;
+    position: absolute;
+    width: 900px;
+    left: 301.96px;
+    top: -0.25px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+}
+.help {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.left {
+    width: 256px;
+    height: 853.88px;
+    display: flex;
+    flex-direction: column;
+
+    background: #6495ED;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.right {
+    /* Article [second-main-info] */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    width: 644px;
+    height: 853.88px;
+
+    background: #F8F8F8;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+}
+
+.avatar-image {
+    /* Image [profile-image] */
+
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 28px;
+    top: 16px;
+
+    background: url(../avatar.svg);
+    mix-blend-mode: normal;
+    border-radius: 180px;
+
+}
+
+.individual-data {
+
+    padding-left: 16px;
+    padding-top: 232px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+
+}
+
+
+.individual-data-title, .interests-title, .languages-title {
+    /* Личные данные */
+
+    padding-top: 14.9px;
+    padding-bottom: 15.1px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.9px;
+    line-height: 19px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+}
+
+.left-divide-line {
+    /* Divider [first-main-hr] */
+
+    width: 224px;
+    height: 1px;
+
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+
+.individual-discription {
+            /* Div [first-main-section-content] */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0px 0 0;
+        gap: 12px;
+
+        mix-blend-mode: normal;
+        border-radius: 0px;
+
+
+}
+
+.fio, .bdate, .email, .phone-number, .city {
+        /* Div */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.92px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+
+}
+
+
+.fio-title {
+    /* ФИО */
+
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+.bdate-title {
+    /* Дата рождения */
+
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.city-title {
+    /* Город */
+
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.phone-title {
+    /* Номер телефона */
+
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.email-title {
+    /* Email */
+
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+.fio-value, .bdate-value, .email-value, .phone-value, .city-value {
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+}
+.interest-value {
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+
+}
+.language-value {
+    /* Английский */
+
+    position: absolute;
+    height: 17px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.level-value {
+
+    position: absolute;
+    height: 16px;
+    left: 207.14px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+
+}
+
+
+.interests {
+    /* Section [first-main-section] */
+
+    width: 224px;
+    padding-left: 16px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+}
+/* Section [first-main-section] */
+
+.interests-discription{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0px 0 0;
+        gap: 12px;
+
+        mix-blend-mode: normal;
+        border-radius: 0px;
+}
+/* Div [first-main-section-content] */
+.languages-discription {
+    /* Div [first-main-section-content] */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0px 0 0;
+    gap: 12px;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+
+.languages {
+    /* Section [first-main-section] */
+
+    width: 224px;
+    padding-left: 16px;
+    padding-bottom: 21.88px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+}
+.language-container {
+        /* Div [statement-mark] */
+
+    width: 223.14px;
+    height: 17px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+.main-title {
+    width: 423px;
+    padding-top: 26.7px;
+    padding-left: 16px;
+    left: 272px;
+    top: 26.7px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27.9px;
+    line-height: 34px;
+    /* identical to box height, or 120% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+
+.main-discription-container {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 19.3px 0 0 16px;
+    gap: 13.19px;
+
+    width: 612px;
+    left: 16px;
+    top: 88px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+}
+
+.main-discription {
+    /* Section */
+    /* Auto layout */
+    display: inline-block;
+    gap: 13.19px;
+
+    left: 272px;
+    top: 88px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+/* В целом достаточно сильный разработчик, я бы даже сказал умный, вообще умен не по годам. */
+.main-discription-value {
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: -0.84px 0px;
+}
+
+
+.right-divide-line {
+    /* Divider [second-main-hr] */
+
+    width: 612px;
+    height: 1px;
+
+    background: #D3D3D3;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+.work {
+    /* Section */
+
+    width: 612px;
+    padding: 0 0 0 16px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.work-title {
+    /* Опыт работы */   
+    width: 107px;
+    height: 20px;
+    padding-top: 14.9px;
+    padding-bottom: 15.9px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.9px;
+    line-height: 19px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.right-divide-line-work {
+    width: 612px;
+    height: 1px;
+
+    background: #D3D3D3;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0 0 0;
+    gap: 12px;
+
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.work-number {
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.work-value-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 602.8px;
+    padding-top: -0.66px;
+}
+.work-date {
+    /* сентябрь 2020 г. — наст. время */
+
+    max-width: 301.8px;
+    padding-left: 420.8px;
+    padding-top: -0.42px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.work-value {
+    padding-top: -0.66px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.work-place {
+
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 16px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.work-discription {
+    padding-top: 12.43px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.education {
+    /* Section */
+
+    width: 612px;
+    padding: 0 0 0 16px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.education-title {
+    /* Опыт работы */
+    height: 20px;
+    padding-top: 14.9px;
+    padding-bottom: 15.9px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.9px;
+    line-height: 19px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.right-divide-line-education {
+    width: 612px;
+    height: 1px;
+
+    background: #D3D3D3;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0 0 0;
+    gap: 12px;
+
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.education-number {
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.education-value-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 602.8px;
+    padding-top: -0.66px;
+}
+.education-date {
+    /* сентябрь 2020 г. — наст. время */
+
+    max-width: 301.8px;
+    padding-left: 420.8px;
+    padding-top: -0.42px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.education-value {
+    padding-top: -0.66px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.education-place {
+
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 16px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.education-discription {
+    padding-top: 12.43px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+
+.course {
+    /* Section */
+
+    width: 612px;
+    height: 258.75px;
+    padding: 0 0 0 16px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.course-title {
+    /* Опыт работы */
+    height: 20px;
+    padding-top: 14.9px;
+    padding-bottom: 15.9px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.9px;
+    line-height: 19px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.right-divide-line-course {
+    width: 612px;
+    height: 1px;
+
+    background: #D3D3D3;
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.course-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0 0 0;
+    gap: 12px;
+
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+}
+.course-number {
+    width: 612px;
+
+    mix-blend-mode: normal;
+    border-radius: 0px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.course-value-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 602.8px;
+    padding-top: -0.66px;
+}
+.course-date {
+    /* сентябрь 2020 г. — наст. время */
+
+    max-width: 301.8px;
+    padding-left: 420.8px;
+    padding-top: -0.42px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.education-value {
+    padding-top: -0.66px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13.3px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+.course-place {
+
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 16px;
+    /* identical to box height, or 121% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.course-discription {
+    padding-top: 12.43px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height, or 127% */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+
+.hidden {
+    display: none;
+}
